@@ -5,7 +5,6 @@ import { socket } from '../../services/socket';
 import { fetchChatHistory, sendMessage, receiveMessage, clearMessages, deleteChat, handleNewInquiry, fetchAllConversations } from '../../features/chat/chatSlice';
 import { fetchProducts } from '../../features/products/productSlice';
 import Swal from 'sweetalert2';
-import api from '../../services/api';
 
 const ChatRoom = () => {
     const { otherUserId, productId } = useParams();
@@ -214,21 +213,21 @@ const ChatRoom = () => {
         }, 2000);
     };
 
-    useEffect(() => {
-        const syncWithDB = async () => {
-            const res = await api.get(`/users/status/${otherUserId}`);
-            setOtherUserStatus({ isOnline: res.data.isOnline, lastSeen: res.data.lastSeen });
-        };
-        syncWithDB();
+    // useEffect(() => {
+    //     const syncWithDB = async () => {
+    //         const res = await api.get(`/users/status/${otherUserId}`);
+    //         setOtherUserStatus({ isOnline: res.data.isOnline, lastSeen: res.data.lastSeen });
+    //     };
+    //     syncWithDB();
 
-        socket.on('statusUpdate', (data) => {
-            if (String(data.userId) === String(otherUserId)) {
-                setOtherUserStatus({ isOnline: data.isOnline, lastSeen: data.lastSeen });
-            }
-        });
+    //     socket.on('statusUpdate', (data) => {
+    //         if (String(data.userId) === String(otherUserId)) {
+    //             setOtherUserStatus({ isOnline: data.isOnline, lastSeen: data.lastSeen });
+    //         }
+    //     });
 
-        return () => socket.off('statusUpdate');
-    }, [otherUserId]);
+    //     return () => socket.off('statusUpdate');
+    // }, [otherUserId]);
 
     return (
         <div className="flex items-center justify-center w-full h-[100dvh] bg-[#050505] overflow-hidden sm:p-6 lg:p-10 relative z-0 selection:bg-blue-500/30 selection:text-blue-200">
