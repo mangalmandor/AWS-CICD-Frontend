@@ -5,6 +5,7 @@ import { socket } from '../../services/socket';
 import { fetchChatHistory, sendMessage, receiveMessage, clearMessages, deleteChat, handleNewInquiry, fetchAllConversations } from '../../features/chat/chatSlice';
 import { fetchProducts } from '../../features/products/productSlice';
 import Swal from 'sweetalert2';
+import api from '../../services/api';
 
 const ChatRoom = () => {
     const { otherUserId, productId } = useParams();
@@ -75,7 +76,7 @@ const ChatRoom = () => {
         socket.on('receiveMessage', handleReceiveMessage);
         socket.on('userTyping', handleUserTyping);
         socket.on('userStoppedTyping', handleUserStoppedTyping);
-        socket.on('statusUpdate', handleStatusUpdate); 
+        socket.on('statusUpdate', handleStatusUpdate);
 
         socket.emit('requestStatus', {
             targetUserId: otherUserId,
@@ -138,7 +139,7 @@ const ChatRoom = () => {
         };
 
         try {
-            setNewMessage(''); 
+            setNewMessage('');
 
             socket.emit('stopTyping', { senderId: user._id, receiverId: otherUserId, productId });
 
