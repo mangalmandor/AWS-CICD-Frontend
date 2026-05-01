@@ -97,7 +97,7 @@ const Home = () => {
                             <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <h3 className="text-2xl font-bold text-gray-100 mb-4 tracking-tight">Instant Trading</h3>
-                        <p className="text-gray-400 font-medium leading-relaxed">Post items or make offers in seconds. Experience the most fluid and intuitive marketplace environment available.</p>
+                        <p className="text-gray-400 font-medium leading-relaxed">Post items or make offers in seconds. Experience the most fluid and intuitive marketplace environment available..</p>
                     </div>
                 </div>
             </section>
