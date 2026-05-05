@@ -55,7 +55,7 @@ const Home = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed font-medium">
-                    Negotiate securely in real-time with zero friction. Connect with verified buyers and sellers instantly through our lightning-fast marketplace.
+                    Negotiate securely in real-time with zero friction. Connect with verified buyers and sellers instantly through our lightning-fast marketplace..
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
