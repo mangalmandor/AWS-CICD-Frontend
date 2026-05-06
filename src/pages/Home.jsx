@@ -50,7 +50,7 @@ const Home = () => {
                 <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-gray-100 tracking-tighter mb-8 max-w-5xl leading-[1.1]">
                     The fastest way to <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500">
-                        buy, sell, and connect.
+                        buy, sell,, and connect.
                     </span>
                 </h1>
 
